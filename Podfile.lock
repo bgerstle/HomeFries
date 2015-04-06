@@ -1,0 +1,26 @@
+PODS:
+  - Fox (1.0.1)
+  - Nimble (0.4.1)
+  - Quick (0.3.1)
+
+DEPENDENCIES:
+  - Fox (from `http://github.com/btgerst/Fox`, commit `c35bd92f`)
+  - Nimble (~> 0.4.0)
+  - Quick (~> 0.3.0)
+
+EXTERNAL SOURCES:
+  Fox:
+    :commit: c35bd92f
+    :git: http://github.com/btgerst/Fox
+
+CHECKOUT OPTIONS:
+  Fox:
+    :commit: c35bd92f
+    :git: http://github.com/btgerst/Fox
+
+SPEC CHECKSUMS:
+  Fox: 8df7ca5d8a5390efde5397c7e97d086d99a4ecdb
+  Nimble: 36913d5c822a29b3ace4113c197c79eb766a3615
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+
+COCOAPODS: 0.36.3

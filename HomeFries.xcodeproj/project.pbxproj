@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0899FF271AD9B5660044A7BE /* HashBasedCollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF261AD9B5660044A7BE /* HashBasedCollectionTest.swift */; };
+		0899FF291AD9B5B10044A7BE /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF281AD9B5B10044A7BE /* TestUtilities.swift */; };
+		0899FF2B1AD9C36A0044A7BE /* DynamicHashingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF2A1AD9C36A0044A7BE /* DynamicHashingTests.swift */; };
+		08A999901AD2231500E63CEE /* HomeFries.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A9998F1AD2231500E63CEE /* HomeFries.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08A999961AD2231500E63CEE /* HomeFries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A9998A1AD2231500E63CEE /* HomeFries.framework */; };
+		08A9999D1AD2231500E63CEE /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A9999C1AD2231500E63CEE /* HashTests.swift */; };
+		08A999AC1AD2232E00E63CEE /* BGHashing.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A61AD2232E00E63CEE /* BGHashing.hpp */; };
+		08A999AD1AD2232E00E63CEE /* AAPLHashBytes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A71AD2232E00E63CEE /* AAPLHashBytes.hpp */; };
+		08A999AE1AD2232E00E63CEE /* EqualityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A81AD2232E00E63CEE /* EqualityMacros.h */; };
+		08A999AF1AD2232E00E63CEE /* CircularBitwiseRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A91AD2232E00E63CEE /* CircularBitwiseRotation.h */; };
+		08A999B01AD2232E00E63CEE /* Person.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A999AA1AD2232E00E63CEE /* Person.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08A999B11AD2232E00E63CEE /* Person.mm in Sources */ = {isa = PBXBuildFile; fileRef = 08A999AB1AD2232E00E63CEE /* Person.mm */; };
+		08A999B41AD2234700E63CEE /* BGHashingTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 08A999B21AD2234700E63CEE /* BGHashingTests.mm */; };
+		08AABC911ADAE7CE00E537D4 /* EquatableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AABC901ADAE7CE00E537D4 /* EquatableExtensions.swift */; };
+		08AABC931ADAE7E100E537D4 /* EquatableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AABC921ADAE7E100E537D4 /* EquatableExtensionsTests.swift */; };
+		3049C669C0F15EE8683D995E /* Pods_HomeFriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC865905B50D33ABA1A4F5 /* Pods_HomeFriesTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08A999971AD2231500E63CEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08A999811AD2231500E63CEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08A999891AD2231500E63CEE;
+			remoteInfo = HomeFries;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0899FF261AD9B5660044A7BE /* HashBasedCollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashBasedCollectionTest.swift; sourceTree = "<group>"; };
+		0899FF281AD9B5B10044A7BE /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
+		0899FF2A1AD9C36A0044A7BE /* DynamicHashingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHashingTests.swift; sourceTree = "<group>"; };
+		08A9998A1AD2231500E63CEE /* HomeFries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HomeFries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A9998E1AD2231500E63CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A9998F1AD2231500E63CEE /* HomeFries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFries.h; sourceTree = "<group>"; };
+		08A999951AD2231500E63CEE /* HomeFriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeFriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A9999B1AD2231500E63CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A9999C1AD2231500E63CEE /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
+		08A999A61AD2232E00E63CEE /* BGHashing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BGHashing.hpp; sourceTree = "<group>"; };
+		08A999A71AD2232E00E63CEE /* AAPLHashBytes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AAPLHashBytes.hpp; sourceTree = "<group>"; };
+		08A999A81AD2232E00E63CEE /* EqualityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualityMacros.h; sourceTree = "<group>"; };
+		08A999A91AD2232E00E63CEE /* CircularBitwiseRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBitwiseRotation.h; sourceTree = "<group>"; };
+		08A999AA1AD2232E00E63CEE /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		08A999AB1AD2232E00E63CEE /* Person.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Person.mm; sourceTree = "<group>"; };
+		08A999B21AD2234700E63CEE /* BGHashingTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BGHashingTests.mm; sourceTree = "<group>"; };
+		08AABC901ADAE7CE00E537D4 /* EquatableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableExtensions.swift; sourceTree = "<group>"; };
+		08AABC921ADAE7E100E537D4 /* EquatableExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableExtensionsTests.swift; sourceTree = "<group>"; };
+		9AC2FE79CF374B31BFA043EE /* Pods-HomeFriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFriesTests/Pods-HomeFriesTests.release.xcconfig"; sourceTree = "<group>"; };
+		D0AD54E71A2452CDE177CBA7 /* Pods-HomeFriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFriesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFriesTests/Pods-HomeFriesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FACC865905B50D33ABA1A4F5 /* Pods_HomeFriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeFriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08A999861AD2231500E63CEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08A999921AD2231500E63CEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08A999961AD2231500E63CEE /* HomeFries.framework in Frameworks */,
+				3049C669C0F15EE8683D995E /* Pods_HomeFriesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08A999801AD2231500E63CEE = {
+			isa = PBXGroup;
+			children = (
+				08A9998C1AD2231500E63CEE /* HomeFries */,
+				08A999991AD2231500E63CEE /* HomeFriesTests */,
+				08A9998B1AD2231500E63CEE /* Products */,
+				E012964874861920CD825849 /* Pods */,
+				B2E55E81DA73CCA3AB57985E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		08A9998B1AD2231500E63CEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08A9998A1AD2231500E63CEE /* HomeFries.framework */,
+				08A999951AD2231500E63CEE /* HomeFriesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08A9998C1AD2231500E63CEE /* HomeFries */ = {
+			isa = PBXGroup;
+			children = (
+				08A9998F1AD2231500E63CEE /* HomeFries.h */,
+				08A999A61AD2232E00E63CEE /* BGHashing.hpp */,
+				08A999A71AD2232E00E63CEE /* AAPLHashBytes.hpp */,
+				08A999A81AD2232E00E63CEE /* EqualityMacros.h */,
+				08A999A91AD2232E00E63CEE /* CircularBitwiseRotation.h */,
+				08A999AA1AD2232E00E63CEE /* Person.h */,
+				08A999AB1AD2232E00E63CEE /* Person.mm */,
+				08AABC901ADAE7CE00E537D4 /* EquatableExtensions.swift */,
+				08A9998D1AD2231500E63CEE /* Supporting Files */,
+			);
+			path = HomeFries;
+			sourceTree = "<group>";
+		};
+		08A9998D1AD2231500E63CEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08A9998E1AD2231500E63CEE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08A999991AD2231500E63CEE /* HomeFriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				0899FF281AD9B5B10044A7BE /* TestUtilities.swift */,
+				08A999B21AD2234700E63CEE /* BGHashingTests.mm */,
+				08AABC921ADAE7E100E537D4 /* EquatableExtensionsTests.swift */,
+				08A9999C1AD2231500E63CEE /* HashTests.swift */,
+				0899FF261AD9B5660044A7BE /* HashBasedCollectionTest.swift */,
+				0899FF2A1AD9C36A0044A7BE /* DynamicHashingTests.swift */,
+				08A9999A1AD2231500E63CEE /* Supporting Files */,
+			);
+			path = HomeFriesTests;
+			sourceTree = "<group>";
+		};
+		08A9999A1AD2231500E63CEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08A9999B1AD2231500E63CEE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2E55E81DA73CCA3AB57985E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FACC865905B50D33ABA1A4F5 /* Pods_HomeFriesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E012964874861920CD825849 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0AD54E71A2452CDE177CBA7 /* Pods-HomeFriesTests.debug.xcconfig */,
+				9AC2FE79CF374B31BFA043EE /* Pods-HomeFriesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		08A999871AD2231500E63CEE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08A999AD1AD2232E00E63CEE /* AAPLHashBytes.hpp in Headers */,
+				08A999AE1AD2232E00E63CEE /* EqualityMacros.h in Headers */,
+				08A999AC1AD2232E00E63CEE /* BGHashing.hpp in Headers */,
+				08A999901AD2231500E63CEE /* HomeFries.h in Headers */,
+				08A999AF1AD2232E00E63CEE /* CircularBitwiseRotation.h in Headers */,
+				08A999B01AD2232E00E63CEE /* Person.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		08A999891AD2231500E63CEE /* HomeFries */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08A999A01AD2231500E63CEE /* Build configuration list for PBXNativeTarget "HomeFries" */;
+			buildPhases = (
+				08A999851AD2231500E63CEE /* Sources */,
+				08A999861AD2231500E63CEE /* Frameworks */,
+				08A999871AD2231500E63CEE /* Headers */,
+				08A999881AD2231500E63CEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeFries;
+			productName = HomeFries;
+			productReference = 08A9998A1AD2231500E63CEE /* HomeFries.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		08A999941AD2231500E63CEE /* HomeFriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08A999A31AD2231500E63CEE /* Build configuration list for PBXNativeTarget "HomeFriesTests" */;
+			buildPhases = (
+				A7B9B33592D83E4BEEA00158 /* Check Pods Manifest.lock */,
+				08A999911AD2231500E63CEE /* Sources */,
+				08A999921AD2231500E63CEE /* Frameworks */,
+				08A999931AD2231500E63CEE /* Resources */,
+				872057D06098AC2951DC20D9 /* Embed Pods Frameworks */,
+				A7D6DEC016164F8DA9A41D16 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08A999981AD2231500E63CEE /* PBXTargetDependency */,
+			);
+			name = HomeFriesTests;
+			productName = HomeFriesTests;
+			productReference = 08A999951AD2231500E63CEE /* HomeFriesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08A999811AD2231500E63CEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Brian Gerstle";
+				TargetAttributes = {
+					08A999891AD2231500E63CEE = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					08A999941AD2231500E63CEE = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 08A999841AD2231500E63CEE /* Build configuration list for PBXProject "HomeFries" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 08A999801AD2231500E63CEE;
+			productRefGroup = 08A9998B1AD2231500E63CEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08A999891AD2231500E63CEE /* HomeFries */,
+				08A999941AD2231500E63CEE /* HomeFriesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08A999881AD2231500E63CEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08A999931AD2231500E63CEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		872057D06098AC2951DC20D9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeFriesTests/Pods-HomeFriesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7B9B33592D83E4BEEA00158 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7D6DEC016164F8DA9A41D16 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeFriesTests/Pods-HomeFriesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08A999851AD2231500E63CEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08AABC911ADAE7CE00E537D4 /* EquatableExtensions.swift in Sources */,
+				08A999B11AD2232E00E63CEE /* Person.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08A999911AD2231500E63CEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0899FF271AD9B5660044A7BE /* HashBasedCollectionTest.swift in Sources */,
+				08A9999D1AD2231500E63CEE /* HashTests.swift in Sources */,
+				08AABC931ADAE7E100E537D4 /* EquatableExtensionsTests.swift in Sources */,
+				0899FF291AD9B5B10044A7BE /* TestUtilities.swift in Sources */,
+				0899FF2B1AD9C36A0044A7BE /* DynamicHashingTests.swift in Sources */,
+				08A999B41AD2234700E63CEE /* BGHashingTests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08A999981AD2231500E63CEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08A999891AD2231500E63CEE /* HomeFries */;
+			targetProxy = 08A999971AD2231500E63CEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08A9999E1AD2231500E63CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		08A9999F1AD2231500E63CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		08A999A11AD2231500E63CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HomeFries/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		08A999A21AD2231500E63CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HomeFries/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		08A999A41AD2231500E63CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0AD54E71A2452CDE177CBA7 /* Pods-HomeFriesTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HomeFriesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		08A999A51AD2231500E63CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC2FE79CF374B31BFA043EE /* Pods-HomeFriesTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HomeFriesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08A999841AD2231500E63CEE /* Build configuration list for PBXProject "HomeFries" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08A9999E1AD2231500E63CEE /* Debug */,
+				08A9999F1AD2231500E63CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08A999A01AD2231500E63CEE /* Build configuration list for PBXNativeTarget "HomeFries" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08A999A11AD2231500E63CEE /* Debug */,
+				08A999A21AD2231500E63CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08A999A31AD2231500E63CEE /* Build configuration list for PBXNativeTarget "HomeFriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08A999A41AD2231500E63CEE /* Debug */,
+				08A999A51AD2231500E63CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08A999811AD2231500E63CEE /* Project object */;
+}
