@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084B46B01ADB68EF00DFE672 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084B46AF1ADB68EF00DFE672 /* ObjectWrapper.swift */; };
+		084B46B21ADB6AC200DFE672 /* PersonHashSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B46B11ADB6AC200DFE672 /* PersonHashSpecs.m */; };
+		084B46B61ADB6D5500DFE672 /* PersonGenerators.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B46B41ADB6D5500DFE672 /* PersonGenerators.m */; };
 		0899FF271AD9B5660044A7BE /* HashBasedCollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF261AD9B5660044A7BE /* HashBasedCollectionTest.swift */; };
 		0899FF291AD9B5B10044A7BE /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF281AD9B5B10044A7BE /* TestUtilities.swift */; };
 		0899FF2B1AD9C36A0044A7BE /* DynamicHashingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF2A1AD9C36A0044A7BE /* DynamicHashingTests.swift */; };
 		08A999901AD2231500E63CEE /* HomeFries.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A9998F1AD2231500E63CEE /* HomeFries.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08A999961AD2231500E63CEE /* HomeFries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A9998A1AD2231500E63CEE /* HomeFries.framework */; };
-		08A9999D1AD2231500E63CEE /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A9999C1AD2231500E63CEE /* HashTests.swift */; };
+		08A9999D1AD2231500E63CEE /* SharedPersonExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A9999C1AD2231500E63CEE /* SharedPersonExamples.swift */; };
 		08A999AC1AD2232E00E63CEE /* BGHashing.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A61AD2232E00E63CEE /* BGHashing.hpp */; };
 		08A999AD1AD2232E00E63CEE /* AAPLHashBytes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A71AD2232E00E63CEE /* AAPLHashBytes.hpp */; };
 		08A999AE1AD2232E00E63CEE /* EqualityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A999A81AD2232E00E63CEE /* EqualityMacros.h */; };
@@ -36,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084B46AF1ADB68EF00DFE672 /* ObjectWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectWrapper.swift; sourceTree = "<group>"; };
+		084B46B11ADB6AC200DFE672 /* PersonHashSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonHashSpecs.m; sourceTree = "<group>"; };
+		084B46B41ADB6D5500DFE672 /* PersonGenerators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonGenerators.m; sourceTree = "<group>"; };
+		084B46B51ADB6D5500DFE672 /* PersonGenerators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonGenerators.h; sourceTree = "<group>"; };
+		084B46B71ADB706F00DFE672 /* HomeFriesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeFriesTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0899FF261AD9B5660044A7BE /* HashBasedCollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashBasedCollectionTest.swift; sourceTree = "<group>"; };
 		0899FF281AD9B5B10044A7BE /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		0899FF2A1AD9C36A0044A7BE /* DynamicHashingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHashingTests.swift; sourceTree = "<group>"; };
@@ -44,7 +52,7 @@
 		08A9998F1AD2231500E63CEE /* HomeFries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFries.h; sourceTree = "<group>"; };
 		08A999951AD2231500E63CEE /* HomeFriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeFriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A9999B1AD2231500E63CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08A9999C1AD2231500E63CEE /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
+		08A9999C1AD2231500E63CEE /* SharedPersonExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPersonExamples.swift; sourceTree = "<group>"; };
 		08A999A61AD2232E00E63CEE /* BGHashing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BGHashing.hpp; sourceTree = "<group>"; };
 		08A999A71AD2232E00E63CEE /* AAPLHashBytes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AAPLHashBytes.hpp; sourceTree = "<group>"; };
 		08A999A81AD2232E00E63CEE /* EqualityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualityMacros.h; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 				08A999AA1AD2232E00E63CEE /* Person.h */,
 				08A999AB1AD2232E00E63CEE /* Person.mm */,
 				08AABC901ADAE7CE00E537D4 /* EquatableExtensions.swift */,
+				084B46AF1ADB68EF00DFE672 /* ObjectWrapper.swift */,
 				08A9998D1AD2231500E63CEE /* Supporting Files */,
 			);
 			path = HomeFries;
@@ -126,10 +135,14 @@
 		08A999991AD2231500E63CEE /* HomeFriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				084B46B71ADB706F00DFE672 /* HomeFriesTests-Bridging-Header.h */,
+				084B46B51ADB6D5500DFE672 /* PersonGenerators.h */,
+				084B46B41ADB6D5500DFE672 /* PersonGenerators.m */,
 				0899FF281AD9B5B10044A7BE /* TestUtilities.swift */,
 				08A999B21AD2234700E63CEE /* BGHashingTests.mm */,
 				08AABC921ADAE7E100E537D4 /* EquatableExtensionsTests.swift */,
-				08A9999C1AD2231500E63CEE /* HashTests.swift */,
+				08A9999C1AD2231500E63CEE /* SharedPersonExamples.swift */,
+				084B46B11ADB6AC200DFE672 /* PersonHashSpecs.m */,
 				0899FF261AD9B5660044A7BE /* HashBasedCollectionTest.swift */,
 				0899FF2A1AD9C36A0044A7BE /* DynamicHashingTests.swift */,
 				08A9999A1AD2231500E63CEE /* Supporting Files */,
@@ -326,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08AABC911ADAE7CE00E537D4 /* EquatableExtensions.swift in Sources */,
+				084B46B01ADB68EF00DFE672 /* ObjectWrapper.swift in Sources */,
 				08A999B11AD2232E00E63CEE /* Person.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,8 +349,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0899FF271AD9B5660044A7BE /* HashBasedCollectionTest.swift in Sources */,
-				08A9999D1AD2231500E63CEE /* HashTests.swift in Sources */,
+				08A9999D1AD2231500E63CEE /* SharedPersonExamples.swift in Sources */,
 				08AABC931ADAE7E100E537D4 /* EquatableExtensionsTests.swift in Sources */,
+				084B46B21ADB6AC200DFE672 /* PersonHashSpecs.m in Sources */,
+				084B46B61ADB6D5500DFE672 /* PersonGenerators.m in Sources */,
 				0899FF291AD9B5B10044A7BE /* TestUtilities.swift in Sources */,
 				0899FF2B1AD9C36A0044A7BE /* DynamicHashingTests.swift in Sources */,
 				08A999B41AD2234700E63CEE /* BGHashingTests.mm in Sources */,
@@ -492,6 +508,7 @@
 				INFOPLIST_FILE = HomeFriesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeFriesTests/HomeFriesTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -508,6 +525,7 @@
 				INFOPLIST_FILE = HomeFriesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeFriesTests/HomeFriesTests-Bridging-Header.h";
 			};
 			name = Release;
 		};

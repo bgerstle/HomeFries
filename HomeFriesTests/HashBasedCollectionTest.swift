@@ -29,11 +29,7 @@ class HashBasedCollectionTest: QuickConfiguration {
             let hashSelector = Selector(hashSelectorString)
             describe("hash-based collection membership properties") {
                 it("should be usable in a set") {
-                    Assert(
-                    FOXForAll(
-                    FOXArray(
-                        PersonGenerator(withHash: hashSelector,
-                                        FOXAlphabeticalStringOfLength(2)))) { (generatedObjects: AnyObject!) -> Bool in
+                    Assert(forAll(FOXArray(PersonGeneratorWithHashAndNames(hashSelector, FOXAlphabeticalStringOfLength(2)))) { (generatedObjects: AnyObject!) -> Bool in
                         let people = generatedObjects as! [Person]
                         let uniquePeople = people.reduce([], combine: { (acc, p) -> [Person] in
                             return contains(acc, p) ? acc : acc + [people.filter(==p).first!]
