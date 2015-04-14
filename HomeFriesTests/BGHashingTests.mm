@@ -38,7 +38,7 @@ describe(@"BGHashCombine", ^{
     });
 
     it(@"should recursively combine hashes in variadic form", ^ {
-        FOXAssert(FOXForAll(FOXTuple(@[FOXAnyPrintableObject(), FOXAnyPrintableObject(), FOXAnyPrintableObject()]),
+        FOXAssertWithOptions(FOXForAll(FOXTuple(@[FOXAnyPrintableObject(), FOXAnyPrintableObject(), FOXAnyPrintableObject()]),
                             ^BOOL(NSArray* objects) {
             NSUInteger const unaryResult = BGHashCombine((NSObject*)objects[0]);
             NSUInteger const binaryResult = BGHashCombine((NSObject*)objects[0], (NSObject*)objects[1]);
@@ -48,6 +48,10 @@ describe(@"BGHashCombine", ^{
             return naryResult == BGHashCombine(binaryResult, BGHashCombine((NSObject*)objects[2]))
                    && binaryResult != naryResult
                    && unaryResult != binaryResult;
+        }), ((FOXOptions){
+            .numberOfTests = 50,
+            .seed = 0,
+            .maximumSize = 0
         }));
     });
 });

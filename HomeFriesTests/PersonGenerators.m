@@ -38,8 +38,11 @@ id<FOXGenerator> DefaultPersonGenerator() {
 
 // !!!: don't make this too big or you might kill your computer!
 id<FOXGenerator> ReallyLongStringGenerator(NSInteger size) {
-    return FOXBind(FOXArrayOfSize(FOXAlphanumericStringOfLength(1), size),
-                   ^id(id characters) {
-        return [characters componentsJoinedByString:@""];
+    return FOXBind(FOXAlphanumericStringOfLength(1), ^id<FOXGenerator>(NSString* character) {
+        NSMutableString* str = [character mutableCopy];
+        for (NSUInteger i = 0; i < size; i++) {
+            [str appendString:character];
+        }
+        return FOXReturn(str);
     });
 }

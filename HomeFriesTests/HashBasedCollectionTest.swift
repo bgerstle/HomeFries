@@ -37,7 +37,7 @@ class HashBasedCollectionTest: QuickConfiguration {
                         let collection = Set(people)
                         let result = !isDisjoint(collection, uniquePeople)
                         return result
-                    })
+                    }, numberOfTests: 250)
                 }
                 pending("should be usable in a dictionary") {
 
