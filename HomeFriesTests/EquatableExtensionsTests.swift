@@ -17,7 +17,7 @@ let maybePrintableObject = FOXOptional(FOXAnyPrintableObject());
 class EquatableExtensionsTests: QuickSpec {
     override func spec() {
         describe("currayble eq") {
-            it("should behave identically to '==' when called with the same arguments") {
+            it("should behave identically to equality operator when called with the same arguments") {
                 Assert(FOXForAll(FOXTuple([maybePrintableObject, maybePrintableObject])) {
                     (generatedObjs: AnyObject!) -> Bool in
                     let objects = generatedObjs as! NSArray

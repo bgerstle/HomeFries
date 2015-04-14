@@ -6,6 +6,9 @@
 @property (nonatomic, readonly, copy) NSString* lastName;
 @property (nonatomic, readonly) UInt8 age;
 
+/// @warning For testing only
+@property (nonatomic, readwrite) SEL hashSelector;
+
 - (instancetype)initWithFirstName:(NSString*)firstName
                        middleName:(NSString*)middleName
                          lastName:(NSString*)lastName

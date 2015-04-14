@@ -37,6 +37,8 @@ class SharedHashableExamples: QuickConfiguration {
 
             let isPersonEqualToItselfWithContextHash: (Person) -> Bool = isPersonEqualToItself(contextHashFn)
 
+            let hashSelector = Selector(context["hashSelector"] as! String)
+
             it("should be equal to itself when properties are 'empty'") {
                 let emptyPerson = Person(firstName: "", middleName: "", lastName: "", age: 0)
                 expect(isPersonEqualToItselfWithContextHash(emptyPerson)).to(beTrue())
@@ -61,36 +63,60 @@ class SharedHashableExamples: QuickConfiguration {
                 },
                 numberOfTests: NUM_PROP_TESTS)
             }
+
+            it("should use the specified selector as its hash algorithm") {
+                let personWithDynamicHash = Person(firstName: "",
+                                                   middleName: "",
+                                                   lastName: "",
+                                                   age: 0,
+                                                   hashSelector: hashSelector);
+                expect(UInt(personWithDynamicHash.hash)).to(equal(hashPersonWithContextHash(personWithDynamicHash)));
+            }
         }
     }
 }
 
 class AppleHashSpec: QuickSpec {
     override func spec() {
-        itBehavesLike("a hashable person") { ["hashFn": ObjectWrapper(Person.appleHash)] }
+        itBehavesLike("a hashable person") { [
+            "hashFn": ObjectWrapper(Person.appleHash),
+            "hashSelector": "appleHash"
+        ] }
     }
 }
 
 class BoostHashSpec: QuickSpec {
     override func spec() {
-        itBehavesLike("a hashable person") { ["hashFn": ObjectWrapper(Person.boostHash)] }
+        itBehavesLike("a hashable person") { [
+            "hashFn": ObjectWrapper(Person.boostHash),
+            "hashSelector": "boostHash"
+        ] }
     }
 }
 
 class RotatedXorHashSpec: QuickSpec {
     override func spec() {
-        itBehavesLike("a hashable person") { ["hashFn": ObjectWrapper(Person.rotatedXorHash)] }
+        itBehavesLike("a hashable person") { [
+            "hashFn": ObjectWrapper(Person.rotatedXorHash),
+            "hashSelector": "rotatedXorHash"
+        ] }
     }
 }
 
 class XorHashSpec: QuickSpec {
     override func spec() {
-        itBehavesLike("a hashable person") { ["hashFn": ObjectWrapper(Person.xorHash)] }
+        itBehavesLike("a hashable person") { [
+            "hashFn": ObjectWrapper(Person.xorHash),
+            "hashSelector": "xorHash"
+        ] }
     }
 }
 
 class ShiftedXorHashSpec: QuickSpec {
     override func spec() {
-        itBehavesLike("a hashable person") { ["hashFn": ObjectWrapper(Person.shiftedXorHash)] }
+        itBehavesLike("a hashable person") { [
+            "hashFn": ObjectWrapper(Person.shiftedXorHash),
+            "hashSelector": "shiftedXorHash"
+        ] }
     }
 }

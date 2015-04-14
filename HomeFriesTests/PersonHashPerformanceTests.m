@@ -18,23 +18,104 @@ static NSArray* PerformanceSamples() {
     static NSArray* SAMPLES;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        SAMPLES = FOXSampleWithCount(PersonGeneratorWithNames(ReallyLongStringGenerator(1e3)), 1e3);
+        SAMPLES = FOXSampleWithCount(PersonGeneratorWithNames(FOXAlphabeticalStringOfLengthRange(1, 5)), 1e3);
     });
     return SAMPLES;
 }
 
-#define PERF_TEST(SEL) \
-@interface SEL##PerformanceTests: XCTestCase \
+@interface PersonHashPerformanceTests : XCTestCase
+@property NSArray* samples;
+@end
+
+@implementation PersonHashPerformanceTests
+
++ (SEL)hashSelector {
+    return nil;
+}
+
+- (SEL)hashSelector {
+    return [[self class] hashSelector];
+}
+
+- (void)setUp {
+    [super setUp];
+    self.samples = PerformanceSamples();
+    for (Person* p in self.samples) {
+        p.hashSelector = self.hashSelector;
+    }
+}
+
++ (NSArray*)testInvocations {
+    if (self.hashSelector) {
+        return [super testInvocations];
+    } else {
+        NSLog(@"Skipping performance suite %@", self);
+        return nil;
+    }
+}
+
+- (NSDictionary*)createDictionaryFromSamples {
+    NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithCapacity:self.samples.count];
+    for (Person* p in self.samples) {
+        [dict setObject:@"foo" forKey:p];
+    }
+    return dict;
+}
+
+- (NSSet*)createSetFromSamples {
+    NSMutableSet* set = [NSMutableSet setWithCapacity:self.samples.count];
+    for (Person* p in self.samples) {
+        [set addObject:p];
+    }
+    return set;
+}
+
+- (void)testHashPerformance {
+    [self measureBlock:^{
+        for (Person* p in self.samples) {
+            [p hash];
+        }
+    }];
+}
+
+- (void)testSetInsertionPerformance {
+    [self measureBlock:^{
+        [self createSetFromSamples];
+    }];
+}
+
+- (void)testSetMembershipPerformance {
+    NSSet* set = [self createSetFromSamples];
+    [self measureBlock:^{
+        for (Person* p in self.samples) {
+            [set containsObject:p];
+        }
+    }];
+}
+
+- (void)testDictionaryInsertionPerformance {
+    [self measureBlock:^{
+        [self createDictionaryFromSamples];
+    }];
+}
+
+- (void)testDictionaryRetrievalPerformance {
+    NSDictionary* dict = [self createDictionaryFromSamples];
+    [self measureBlock:^{
+        for (Person* p in self.samples) {
+           __unused id value = dict[p];
+        }
+    }];
+}
+
+@end
+
+
+#define PERF_TEST(SELECTOR) \
+@interface SELECTOR##PerformanceTests: PersonHashPerformanceTests \
 @end \
-@implementation SEL##PerformanceTests \
-- (void)testPerformance { \
-    NSArray* samples = PerformanceSamples(); \
-    [self measureBlock:^{ \
-        for (Person* p in samples) { \
-            [p SEL]; \
-        } \
-    }]; \
-} \
+@implementation SELECTOR##PerformanceTests \
++ (SEL)hashSelector { return @selector(SELECTOR); } \
 @end
 
 PERF_TEST(appleHash)

@@ -126,7 +126,7 @@ static PersonPropertyHashes PersonPropertyHashesMake(Person* p) {
 }
 
 - (NSUInteger)shiftedXorHash {
-    return self.firstName.hash ^ self.middleName.hash << 1 ^ self.lastName.hash << 2 ^ self.age << 3;
+    return self.firstName.hash ^ (self.middleName.hash << 1) ^ (self.lastName.hash << 2) ^ (self.age << 3);
 }
 
 - (NSUInteger)rotatedXorHash {
