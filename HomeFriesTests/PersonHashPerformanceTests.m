@@ -39,7 +39,11 @@ static NSArray* PerformanceSamples() {
 
 - (void)setUp {
     [super setUp];
+    // samples are only generated once to ensure all performance tests are run on the same data
+    // (see dispatch_once above)
     self.samples = PerformanceSamples();
+
+    // each test requires the "people" to have their hash algorithm set
     for (Person* p in self.samples) {
         p.hashSelector = self.hashSelector;
     }
@@ -68,6 +72,24 @@ static NSArray* PerformanceSamples() {
         [set addObject:p];
     }
     return set;
+}
+
+- (void)testNumberOfCollisions {
+    NSUInteger numCollisions = 0;
+    for (NSUInteger i = 0; i < self.samples.count - 1; i++) {
+        Person* pi = self.samples[i];
+        for (NSUInteger j = i+1; j < self.samples.count; j++) {
+            Person* pj = self.samples[j];
+            if ([pi isEqualToPerson:pj] != (pi.hash == pj.hash)) {
+                /*
+                 if object equality is not the same as hash equality, we have a collision. i.e. two identical objects
+                 have different hashes or two different objects have the same hash
+                */
+                numCollisions++;
+            }
+        }
+    }
+    NSLog(@"Number of collisions using %@: %lu", NSStringFromSelector(self.hashSelector), numCollisions);
 }
 
 - (void)testHashPerformance {

@@ -131,9 +131,9 @@ static PersonPropertyHashes PersonPropertyHashesMake(Person* p) {
 
 - (NSUInteger)rotatedXorHash {
     return self.firstName.hash
-    ^ circularBitwiseRotation(self.middleName.hash, 1)
-    ^ circularBitwiseRotation(self.lastName.hash, 2)
-    ^ circularBitwiseRotation(self.age, 3);
+    ^ flipBitsWithAdditionalRotation(self.middleName.hash, 1)
+    ^ flipBitsWithAdditionalRotation(self.lastName.hash, 2)
+    ^ flipBitsWithAdditionalRotation(self.age, 3);
 }
 
 @end

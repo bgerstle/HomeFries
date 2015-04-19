@@ -30,4 +30,6 @@
 
 - (NSUInteger)rotatedXorHash;
 
+- (BOOL)isEqualToPerson:(Person*)person;
+
 @end

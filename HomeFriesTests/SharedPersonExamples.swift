@@ -21,9 +21,6 @@ func hashPerson(forContext hashFunction: PersonHashFunction)(_ p: Person) -> UIn
     return hashFunction(p)()
 }
 
-// setting this value higher causes an exponential increase in memory usage
-let NUM_PROP_TESTS = UInt(1e3)
-
 class SharedHashableExamples: QuickConfiguration {
     override class func configure(configuration: Configuration!) {
         sharedExamples("a hashable person") { (contextProvider: SharedExampleContext) in
@@ -49,7 +46,7 @@ class SharedHashableExamples: QuickConfiguration {
                     let person = args as! Person
                     return isPersonEqualToItselfWithContextHash(person)
                 },
-                numberOfTests: NUM_PROP_TESTS)
+                numberOfTests: 50)
             }
 
             it("should have hashes that are equal when objects are equal") {
@@ -61,7 +58,8 @@ class SharedHashableExamples: QuickConfiguration {
                     let b = vals[1]
                     return (a == b) == (hashPersonWithContextHash(a) == hashPersonWithContextHash(b))
                 },
-                numberOfTests: NUM_PROP_TESTS)
+                // setting this value higher causes an exponential increase in memory usage
+                numberOfTests: UInt(1e3))
             }
 
             it("should use the specified selector as its hash algorithm") {
