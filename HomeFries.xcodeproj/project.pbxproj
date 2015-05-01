@@ -10,6 +10,7 @@
 		084B46B01ADB68EF00DFE672 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084B46AF1ADB68EF00DFE672 /* ObjectWrapper.swift */; };
 		084B46B21ADB6AC200DFE672 /* PersonHashPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B46B11ADB6AC200DFE672 /* PersonHashPerformanceTests.m */; };
 		084B46B61ADB6D5500DFE672 /* PersonGenerators.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B46B41ADB6D5500DFE672 /* PersonGenerators.m */; };
+		0867174E1AF2FF8B00013D2C /* BadObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0867174D1AF2FF8B00013D2C /* BadObjectTests.m */; };
 		0899FF291AD9B5B10044A7BE /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899FF281AD9B5B10044A7BE /* TestUtilities.swift */; };
 		08A4C55C1ADE02F300E2FFD8 /* CircularBitwiseRotationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A4C55B1ADE02F300E2FFD8 /* CircularBitwiseRotationTests.m */; };
 		08A999901AD2231500E63CEE /* HomeFries.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A9998F1AD2231500E63CEE /* HomeFries.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +44,7 @@
 		084B46B41ADB6D5500DFE672 /* PersonGenerators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonGenerators.m; sourceTree = "<group>"; };
 		084B46B51ADB6D5500DFE672 /* PersonGenerators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonGenerators.h; sourceTree = "<group>"; };
 		084B46B71ADB706F00DFE672 /* HomeFriesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeFriesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0867174D1AF2FF8B00013D2C /* BadObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadObjectTests.m; sourceTree = "<group>"; };
 		0899FF281AD9B5B10044A7BE /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		08A4C55B1ADE02F300E2FFD8 /* CircularBitwiseRotationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularBitwiseRotationTests.m; sourceTree = "<group>"; };
 		08A9998A1AD2231500E63CEE /* HomeFries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HomeFries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				084B46B11ADB6AC200DFE672 /* PersonHashPerformanceTests.m */,
 				08A4C55B1ADE02F300E2FFD8 /* CircularBitwiseRotationTests.m */,
 				08A9999A1AD2231500E63CEE /* Supporting Files */,
+				0867174D1AF2FF8B00013D2C /* BadObjectTests.m */,
 			);
 			path = HomeFriesTests;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				08AABC931ADAE7E100E537D4 /* EquatableExtensionsTests.swift in Sources */,
 				084B46B21ADB6AC200DFE672 /* PersonHashPerformanceTests.m in Sources */,
 				084B46B61ADB6D5500DFE672 /* PersonGenerators.m in Sources */,
+				0867174E1AF2FF8B00013D2C /* BadObjectTests.m in Sources */,
 				0899FF291AD9B5B10044A7BE /* TestUtilities.swift in Sources */,
 				08A999B41AD2234700E63CEE /* BGHashingTests.mm in Sources */,
 				08A4C55C1ADE02F300E2FFD8 /* CircularBitwiseRotationTests.m in Sources */,
