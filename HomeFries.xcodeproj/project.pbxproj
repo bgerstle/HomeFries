@@ -144,8 +144,8 @@
 				08A9999C1AD2231500E63CEE /* SharedPersonExamples.swift */,
 				084B46B11ADB6AC200DFE672 /* PersonHashPerformanceTests.m */,
 				08A4C55B1ADE02F300E2FFD8 /* CircularBitwiseRotationTests.m */,
-				08A9999A1AD2231500E63CEE /* Supporting Files */,
 				0867174D1AF2FF8B00013D2C /* BadObjectTests.m */,
+				08A9999A1AD2231500E63CEE /* Supporting Files */,
 			);
 			path = HomeFriesTests;
 			sourceTree = "<group>";

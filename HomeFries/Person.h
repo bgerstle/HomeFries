@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface Person : NSObject <NSCopying>
 @property (nonatomic, readonly, copy) NSString* firstName;
 @property (nonatomic, readonly, copy) NSString* middleName;
@@ -33,3 +35,5 @@
 - (BOOL)isEqualToPerson:(Person*)person;
 
 @end
+
+NS_ASSUME_NONNULL_END
