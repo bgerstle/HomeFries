@@ -36,53 +36,58 @@ class SharedHashableExamples: QuickConfiguration {
 
             let hashSelector = Selector(context["hashSelector"] as! String)
 
-            it("should be equal to itself when properties are 'empty'") {
-                let emptyPerson = Person(firstName: "", middleName: "", lastName: "", age: 0)
-                expect(isPersonEqualToItselfWithContextHash(emptyPerson)).to(beTrue())
+            describe("hash properties") {
+                 it("should not have problems with symmetry") {
+                    let p1 = Person(firstName: "foo", middleName: "", lastName: "bar", age: 0, hashSelector: hashSelector)
+
+                    // "mirror" p1 by creating p2 with flipped first & last names
+                    let p2 = Person(firstName: p1.lastName,
+                                    middleName: p1.middleName,
+                                    lastName: p1.firstName,
+                                    age: p1.age,
+                                    hashSelector: hashSelector)
+
+                    // oops! flipping the first & last names of p1 in p2 results in a collision
+                    expect(p1.hash).notTo(equal(p2.hash))
+                }           
+                it("should have hashes that are equal when objects are equal") {
+                    let shortString = FOXStringOfLengthRange(1, 2);
+                    let peopleWithShortNames = FOXTuple([shortString, shortString].map(PersonGeneratorWithNames))
+                    Assert(forAll(peopleWithShortNames) { (args: AnyObject!) -> Bool in
+                        let vals = args as! [Person]
+                        let a = vals[0]
+                        let b = vals[1]
+                        return (a == b) == (hashPersonWithContextHash(a) == hashPersonWithContextHash(b))
+                        },
+                        // setting this value higher causes an exponential increase in memory usage
+                        numberOfTests: UInt(1e3))
+                }
             }
 
-            it("should produce copies that are equal to the original") {
-                Assert(forAll(DefaultPersonGenerator()) { (args: AnyObject!) -> Bool in
-                    let person = args as! Person
-                    return isPersonEqualToItselfWithContextHash(person)
-                    },
-                    numberOfTests: 50)
+            describe("equality & copying") {
+                it("should be equal to itself when properties are 'empty'") {
+                    let emptyPerson = Person(firstName: "", middleName: "", lastName: "", age: 0)
+                    expect(isPersonEqualToItselfWithContextHash(emptyPerson)).to(beTrue())
+                }
+
+                it("should produce copies that are equal to the original") {
+                    Assert(forAll(DefaultPersonGenerator()) { (args: AnyObject!) -> Bool in
+                        let person = args as! Person
+                        return isPersonEqualToItselfWithContextHash(person)
+                        },
+                        numberOfTests: 50)
+                }
             }
 
-            it("should have hashes that are equal when objects are equal") {
-                let shortString = FOXStringOfLengthRange(1, 2);
-                let peopleWithShortNames = FOXTuple([shortString, shortString].map(PersonGeneratorWithNames))
-                Assert(forAll(peopleWithShortNames) { (args: AnyObject!) -> Bool in
-                    let vals = args as! [Person]
-                    let a = vals[0]
-                    let b = vals[1]
-                    return (a == b) == (hashPersonWithContextHash(a) == hashPersonWithContextHash(b))
-                    },
-                    // setting this value higher causes an exponential increase in memory usage
-                    numberOfTests: UInt(1e3))
-            }
-
-            it("should use the specified selector as its hash algorithm") {
-                let personWithDynamicHash = Person(firstName: "",
-                    middleName: "",
-                    lastName: "",
-                    age: 0,
-                    hashSelector: hashSelector);
-                expect(UInt(personWithDynamicHash.hash)).to(equal(hashPersonWithContextHash(personWithDynamicHash)));
-            }
-
-            it("doesn't have problems with symmetry") {
-                let p1 = Person(firstName: "foo", middleName: "", lastName: "bar", age: 0, hashSelector: hashSelector)
-
-                // "mirror" p1 by creating p2 with flipped first & last names
-                let p2 = Person(firstName: p1.lastName,
-                                middleName: p1.middleName,
-                                lastName: p1.firstName,
-                                age: p1.age,
-                                hashSelector: hashSelector)
-
-                // oops! flipping the first & last names of p1 in p2 results in a collision
-                expect(p1.hash).notTo(equal(p2.hash))
+            describe("dynamic hashing") {
+                it("should use the specified selector as its hash algorithm") {
+                    let personWithDynamicHash = Person(firstName: "",
+                        middleName: "",
+                        lastName: "",
+                        age: 0,
+                        hashSelector: hashSelector);
+                    expect(UInt(personWithDynamicHash.hash)).to(equal(hashPersonWithContextHash(personWithDynamicHash)));
+                }
             }
         }
     }
