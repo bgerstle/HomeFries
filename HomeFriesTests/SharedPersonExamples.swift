@@ -13,26 +13,10 @@ import Nimble
 import Quick
 import HomeFries
 
-func isPersonEqualToItself(hashFunction: PersonHashFunction)(_ p: Person) -> Bool {
-    return p.isEqualToItself(using: hashFunction)
-}
-
-func hashPerson(forContext hashFunction: PersonHashFunction)(_ p: Person) -> UInt {
-    return hashFunction(p)()
-}
-
 class SharedHashableExamples: QuickConfiguration {
     override class func configure(configuration: Configuration!) {
         sharedExamples("a hashable person") { (contextProvider: SharedExampleContext) in
             let context = contextProvider()
-
-            let wrappedHashFn = context["hashFn"] as! ObjectWrapper<PersonHashFunction>
-
-            let contextHashFn: PersonHashFunction = wrappedHashFn.value
-
-            let hashPersonWithContextHash = hashPerson(forContext: contextHashFn)
-
-            let isPersonEqualToItselfWithContextHash: (Person) -> Bool = isPersonEqualToItself(contextHashFn)
 
             let hashSelector = Selector(context["hashSelector"] as! String)
 
@@ -50,14 +34,15 @@ class SharedHashableExamples: QuickConfiguration {
                     // oops! flipping the first & last names of p1 in p2 results in a collision
                     expect(p1.hash).notTo(equal(p2.hash))
                 }           
-                it("should have hashes that are equal when objects are equal") {
+                it("should have the same hash and object equivalence to another person") {
                     let shortString = FOXStringOfLengthRange(1, 2);
-                    let peopleWithShortNames = FOXTuple([shortString, shortString].map(PersonGeneratorWithNames))
-                    Assert(forAll(peopleWithShortNames) { (args: AnyObject!) -> Bool in
+                    let personWithShortName = PersonGeneratorWithHashAndNames(hashSelector, shortString)
+                    let pairsOfPeopleWithShortNames = FOXTuple([personWithShortName, personWithShortName])
+                    Assert(forAll(pairsOfPeopleWithShortNames) { (args: AnyObject!) -> Bool in
                         let vals = args as! [Person]
                         let a = vals[0]
                         let b = vals[1]
-                        return (a == b) == (hashPersonWithContextHash(a) == hashPersonWithContextHash(b))
+                        return (a == b) == (a.hash == b.hash)
                         },
                         // setting this value higher causes an exponential increase in memory usage
                         numberOfTests: UInt(1e3))
@@ -66,27 +51,31 @@ class SharedHashableExamples: QuickConfiguration {
 
             describe("equality & copying") {
                 it("should be equal to itself when properties are 'empty'") {
-                    let emptyPerson = Person(firstName: "", middleName: "", lastName: "", age: 0)
-                    expect(isPersonEqualToItselfWithContextHash(emptyPerson)).to(beTrue())
+                    let emptyPerson = Person(firstName: "", middleName: "", lastName: "", age: 0, hashSelector: hashSelector)
+                    let copyOfEmptyPerson: Person = emptyPerson.copy() as! Person
+                    expect(emptyPerson).to(equal(copyOfEmptyPerson))
+                    expect(emptyPerson.hash).to(equal(copyOfEmptyPerson.hash))
                 }
 
-                it("should produce copies that are equal to the original") {
-                    Assert(forAll(DefaultPersonGenerator()) { (args: AnyObject!) -> Bool in
+                fit("should produce copies that are equal to the original") {
+                    Assert(forAll(PersonGeneratorWithHash(hashSelector)) { (args: AnyObject!) -> Bool in
                         let person = args as! Person
-                        return isPersonEqualToItselfWithContextHash(person)
+                        let copyOfPerson = person.copy() as! Person
+                        return person == copyOfPerson && person.hash == copyOfPerson.hash
                         },
                         numberOfTests: 50)
                 }
             }
 
             describe("dynamic hashing") {
-                it("should use the specified selector as its hash algorithm") {
-                    let personWithDynamicHash = Person(firstName: "",
-                        middleName: "",
-                        lastName: "",
-                        age: 0,
-                        hashSelector: hashSelector);
-                    expect(UInt(personWithDynamicHash.hash)).to(equal(hashPersonWithContextHash(personWithDynamicHash)));
+                fit("should use the specified selector as its hash algorithm") {
+                    let hashFn: PersonHashFunction = (context["hashFn"] as! ObjectWrapper).value
+                    let person = Person(firstName: "",
+                                        middleName: "",
+                                        lastName: "",
+                                        age: 0,
+                                        hashSelector: hashSelector);
+                    expect(UInt(person.hash)).to(equal(hashFn(person)()))
                 }
             }
         }

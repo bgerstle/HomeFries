@@ -88,7 +88,8 @@ static PersonPropertyHashes PersonPropertyHashesMake(Person* p) {
     return [[[self class] alloc] initWithFirstName:self.firstName
                                         middleName:self.middleName
                                           lastName:self.lastName
-                                               age:self.age];
+                                               age:self.age
+                                      hashSelector:self.hashSelector];
 }
 
 - (BOOL)isEqualToPerson:(Person*)person {
